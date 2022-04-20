@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>필터링</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function(){
+            //$("div p").first().css("background-color","yellow");
+            //$("div p").last().css("background-color","yellow");
+            
+            //eq() : 선택된 요소의 특정 인덱스 번호를 가진 요소를 선택
+            //$("p").eq(-2).css("background-color","yellow");// 음수는 끝에서부터 순서를 센다
+
+            //$("p").filter($("div p.intro")).css("background-color","yellow");
+/*
+            let DOM = document.getElementById("intro");
+            $("p").filter(DOM).css("background-color","yellow");
+
+            $("p").filter(function(){//length==2는 <span>이 2개인 <p>요소를 의미
+                return $("span", this).length == 2;}).css("background-color","yellow");
+*/
+            $("p").slice(-3,-1).css("background-color","yellow");
+        });
+    </script>
+</head>
+<body>
+
+        <h1>Welcome to My Homepage</h1>
+        <p>My name is Donald (index 0).</p>
+        <p>Donald Duck (index 1).</p>
+        <p>I live in Duckburg (index 2).</p>
+        <p>My best friend is Mickey (index 3).</p>
+        <div>start the selection of p elements from the p element with index 2.</div>
+        <br><br>
+    <!--
+    <p>This p element is outside the div element</p>
+    <p>This p element is also outside the div element</p>
+    
+    
+    
+    <h1>Welcome to My Homepage</h1>
+    <div style="border: 1px solid black;">
+        <p>This is a paragraph in a div.</p>
+        <p>This is a paragraph in a div.</p>
+    </div><br>
+    <div style="border: 1px solid black;">
+        <p>This is a paragraph in another div.</p>
+        <p>This is a paragraph in another div.</p>
+    </div>
+    <p>This is also a paragraph.</p>
+
+    <div>
+        <p>A p element <span>with one span element.</span></p>
+        <p>A p element <span>with</span>  two <span>span elements.</span></p>
+        <p>A p element <span>with one span element.</span></p>
+        <p>A p element <span>with</span>  two <span>span elements.</span></p>
+        <p>A p element with no span element.</p>
+    </div>
+    <p>This example returns all p elements.</p>-->
+</body>
+</html>

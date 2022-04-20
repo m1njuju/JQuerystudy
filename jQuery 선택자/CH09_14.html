@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function(){
+            $("#last").click(function(){
+                $("p:last").css("background-color","yellow");
+            });
+            $("#last-child").click(function(){
+                $("p:last-child").css("background-color","yellow");
+            });
+            $("#last-of-type").click(function(){
+                $("p:last-of-type").css("background-color","yellow");
+            });
+        });
+    </script>
+</head>
+<body>
+    <p>body의 첫 번째 단락, div의 첫 번째 자식</p>
+    <div style="border:1px solid">
+        <p>div의 첫 번째 단락, div의 첫 번째 자식</p>
+        <p>div의 마지막 단락, div의 마지막 자식</p>
+    </div><br>
+    <div style="border:1px solid">
+        <span>span 요소, 이 div의 첫 번째 자식</span>
+        <p>다른 div의 첫 번째 단락, 이 div의 두 번째 자식</p>
+        <p>다른 div의 마지막 단락, 이 div의 세 번째 자식</p>
+        <span>span 요소, 이 div의 마지막 자식</span>
+    </div><br>
+    <div style="border:1px solid">
+        <p>다른 div의 첫 번째 단락, div의 첫 번째 자식</p>
+        <p>다른 div의 마지막 단락, div의 마지막 자식</p>
+    </div>
+    <p>body의 마지막 단락, div의 첫 번째 자식</p>
+    <button id="last">first</button>
+    <button id="last-child">first-child</button>
+    <button id="last-of-type">first-of-type</button>
+</body>
+</html>

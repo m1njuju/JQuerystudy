@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form 이벤트 메서드</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function() {
+            $("input").focusin(function() {
+                $(this).parent().css("background-color","#cccccc");
+            });
+            $("input").focusout(function() {
+                $(this).parent().css("background-color","#ffffff");
+            });
+            $("form").submit(function() {
+                alert("제출되었습니다!");
+            });
+            $("form").select(function() {
+                alert("Text marked!");
+            });
+            $("input").change(function() {
+                alert("Text changed!");
+            });
+        });
+    </script>
+</head>
+<body><!--
+    Name: <input type="text" name="fullname"><br>
+    Email: <input type="text" name="email">-->
+
+    <div style="border: 1px solid black; padding:10px;">
+        First name: <input type="text"><br>
+        Last name: <input type="text">
+    </div>
+
+    <form action="">
+        First name: <input type="text" name="FirstName" value="Mickey"><br>
+        Last name: <input type="text" name="LastName" value="Mouse">
+        <input type="submit" value="Submit">
+    </form>
+
+    <h2>Change method test</h2>
+    <input type="text" value="Hello World">
+</body>
+</html>

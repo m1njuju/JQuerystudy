@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이벤트 메서드</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script>
+        let i=0;
+        let x=0;
+        $(document).ready(function() {
+            $("input").keydown(function() {
+                $("input").css("background-color","yellow");
+            });
+            $("input").keyup(function() {
+                $("input").css("background-color","pink");
+            });
+            /*$("input").keypress(function() {
+                $("span").text(i +=1);
+            });
+            $(window).resize(function() {
+                $("span").text(window.innerWidth);
+            }); */
+            $("div").scroll(function() {
+                $("span").text(x +=1);
+            });
+        });
+    </script>
+</head>
+<body>
+    Enter your name: <input type="text">
+    <p>Keypresses: <span>0</span></p>
+
+    <p>Try the scrollbar in the div</p>
+    <div style="border:1px solid black; width:200px; height:100px; overflow:scroll;">
+        All the different visitor's actions that a web page can respond tho are called events.
+        An event represents the precise moment when something happens.<br><br>
+        'Whenever you feel like criticizing anyone,' he told me, just remember that
+        all the people in this world haven't had the advantages that you've had.'
+    </div>
+    <p>Scrolled <span>0</span> times.</p>
+</body>
+</html>

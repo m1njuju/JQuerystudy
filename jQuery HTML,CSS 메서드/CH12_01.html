@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function(){
+            //콘텐츠 반환을 위한 메서드
+            /*$("#btn1").click(function(){
+                document.getElementById("demo").innerHTML=$("#test1").text();
+            });
+            $("#btn2").click(function(){
+                alert($("#test1").html());
+                document.getElementById("demo").innerHTML=$("#test1").html();
+            });
+            $("#btn3").click(function(){
+                document.getElementById("demo").innerHTML=$("#test2").val();
+            });
+            $("button").click(function(){
+                alert($("#naver").attr("href"));
+            });*/
+
+            //콘텐츠 설정을 위한 메서드
+            $("#btn1").click(function(){
+                $("#test1").text("Hello world!");
+            });
+            $("#btn2").click(function(){
+                $("#test2").html("<b>Hello world!<b>");
+            });
+            $("#btn3").click(function(){
+                $("#test3").val("Dolly Duck");
+            });
+            $("button").click(function(){
+                $("#w3s").attr("href", "https://www.google.com");
+            });
+        });
+    </script>
+</head>
+<body><!--
+    <p id="test1">This is some <b>bold</b> text in a paragraph.</p>
+    <p>Name: <input type="text" id="test2" value="Mickey Mouse"></p>
+    <button id="btn1">Show Text</button>
+    <button id="btn2">Show HTML</button>
+    <button id="btn3">Show Value</button>
+    <p id="demo"></p><br>
+
+    <p><a href="http://www.naver.com" id="naver">naver.com</a></p>
+    <button>Show href Value</button><br>-->
+
+    <p id="test1">This is a paragraph.</p>
+    <p id="test2">This is another paragraph.</p>
+    <p>Input field: <input type="text" id="test3" value="Mickey Mouse"></p>
+    <button id="btn1">Set Text</button>
+    <button id="btn2">Set HTML</button>
+    <button id="btn3">Set Value</button><br><br>
+
+    <p><a href="https://www.w3schools.com" id="w3s">Changing URL</a></p>
+    <button>Change href Value</button>
+    <p>Mouse over the link (or click on it) to see that the value of the href attribute has changed.</p>
+</body>
+</html>

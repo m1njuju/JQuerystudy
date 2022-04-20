@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery 형제 탐색</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <style>
+        .sibling * {
+            display: block;
+            border: 2px solid orange;
+            color: blue;
+            padding: 5px;
+            margin: 15px;
+        }
+    </style>
+    <script>
+        $(document).ready(function(){
+            $("button").click(function(){
+                $("h2").siblings("p").css({"color":"green","border":"2px solid green"});
+            });
+
+            //$("li.start").siblings(".first").css({"color":"red","border":"2px solid green"});
+            //$("li.start").next().css({"color":"red","border":"2px solid green"});
+
+            //$("div").next("p").css("background-color", "yellow");
+
+            //$("li.start").nextAll(".first").css({"color":"red","border":"2px solid green"});
+
+            //$("h2").nextAll(".first,.second,.third").css({"color":"red","border":"2px solid green"});
+
+            //$("li.start").nextUntil("li.stop",".first").css({"color":"red","border":"2px solid green"});
+
+            //$("h2").nextUntil("h5",".first,.second,.third").css({"color":"red","border":"2px solid green"});
+
+            let DOM = document.getElementsByClassName("li.stop");
+            $("li.start").nextUntil(DOM,".first").css({"color":"red","border":"2px solid green"});
+        });
+    </script>
+</head>
+<body class="siblings">
+    <div>div (parent)
+        <p>p</p>
+        <span>span</span>
+        <h2>h2</h2>
+        <h3>h3</h3>
+        <p>p</p>
+    </div>
+    <button>Add classes to elements</button><br><br>
+
+    <div style="width: 500px;" class="siblings">
+        <ul>ul (parent)
+            <li>li (the previous sibling of "start")</li>
+            <li class="first">li (the previous sibling of "start")</li>
+            <li class="start">li (sibling)</li>
+            <li>li (the next sibling of "start")</li>
+            <li class="first">li (the next sibling of "start")</li>
+            <li class="stop">li (sibling with class name "stop")</li>
+            <li class="second">li (the next sibling of "start")</li>
+        </ul>
+    </div><br><br>
+
+    <h1>What will $("div").next("p") select?</h1>
+    <div style="border: 1px solid black;padding: 10px;">This is a div element.</div>
+    <p>This p element is the next sibling element of a div element.</p>
+    <p>This is another p element.</p>
+    <div style="border: 1px solid black;padding: 10px;">
+        <p>This is a p elemnent inside a div element.</p>
+    </div><br><br>
+
+    <div style="width: 500px;" class="siblings">
+        <p>p In this example</p>
+        <span>span In this example</span>
+        <h2>h2 In this example</h2>
+        <h3>h3 In this example</h3>
+        <p>p In this example</p>
+        <p class="first">p class "first"</p>
+        <p>p In this example</p>
+        <span class="second">span class "second"</span>
+        <span class="second">span alos class "second"</span>
+        <span>span</span>
+        <h3 class="third">h3 class "third"</h3>
+    </div>
+    <p>In this example</p>
+</body>
+</html>

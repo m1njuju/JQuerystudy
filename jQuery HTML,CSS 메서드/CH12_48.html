@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>래핑메서드</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function(){
+            /*$("button").click(function(){
+            //DOM의 새로운 요소 생성
+                $("p").wrapAll(document.createElement("div"));
+                
+                //함수를 사용하여 래핑하기
+                $("p").wrap(function(){
+                    return "<div></div>";
+                });
+
+                $("p").wrapInner("<b></b>");
+                $("p").wrapInner(document.createElement("b"));
+                $("p").wrapInner(function(){
+                    return ("<b></b>");
+                });
+            });*/
+            
+            $("#btn1").click(function(){
+                $("p").wrap("<div></div>");
+            });
+            $("#btn2").click(function(){
+                $("p").unwrap();//선택된요소의 부모 요소에 대한 스타일 제거
+            });
+        });
+    </script>
+    <style>
+        div {background-color: yellow;}
+    </style>
+</head>
+<body>
+    <p>This is a paragraph.</p>
+    <p>This is another paragraph.</p>
+    <button id="btn1">Wrap a div</button>
+    <button id="btn2">Unwrap a div</button><br>
+
+
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>마우스 이벤트 메서드</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function(){
+            $("p").click(function() {
+                $(this).hide();
+            });
+            $("p").mouseenter(function() {
+                $("p").css("background-color","yellow");
+            });
+            $("p").mouseleave(function() {
+                $("p").css("background-color","lightgray");
+            });
+            $("#p1").mousedown(function() {
+                alert("Mouse down over p1!");
+            });
+            $("#p2").mouseup(function() {
+                alert("Mouse up over p2!");
+            });
+            $("p").mouseover(function() {
+                $("p").css("background-color","yellow");
+            });
+            $("p").mouseout(function() {
+                $("p").css("background-color","lightgray");
+            });
+            $(document).mousemove(function(event) {
+                $("span").text(event.pageX+", "+event.pageY);
+            });
+            $("#p1").hover(function(){
+                alert("Mouse down over p1!");
+            },
+            function() {
+                alert("Bye! You now leave p1!");
+            });
+        });
+    </script>
+</head>
+<body>
+    <p>If you click on me, I will disappear.</p>
+    <p>Click me away!</p>
+    <p>Click me too!</p>
+
+    <p id="p1">This is a paragraph.</p>
+    <p id="p2">This is a paragraph.</p>
+
+    <p>test of mouseover and mouseout event.</p>
+
+    <p>Mouse is at coordinates: <span></span>.</p>
+</body>
+</html>

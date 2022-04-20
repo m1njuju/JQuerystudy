@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery 조상 탐색</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <style>
+        .ancestors * {
+            display: block;
+            border: 2px solid orange;
+            color: blue;
+            padding: 5px;
+            margin: 15px;
+        }
+    </style>
+    <script>
+        $(document).ready(function(){
+            $("button").click(function(){
+                //$("span").parent().css({"color":"red", "border":"2px solid green"});
+                //$("span").parent("li").css({"color":"red", "border":"2px solid green"});
+                //$("span").parent("li.first").css({"color":"red", "border":"2px solid green"});
+
+                /**/
+                let treeTraversal = $("span").parents().map(function(){
+                    return this.tagName;}).get().join(", ");
+                //$("span").after("<h2>"+ treeTraversal+ "</h2>");
+                $("span").after(treeTraversal);
+                
+                //$("span").parents().css({"color":"red", "border":"2px solid green"});
+                //$("span").parents("ul").css({"color":"red", "border":"2px solid green"});
+                //$("span").parents("div, li").css({"color":"red", "border":"2px solid green"});
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="ancestors">
+        <div style="width: 500px;">div (great-grandparent)
+            <ul>ul (grandparent)
+                <li class="first">li (direct parent)<!--span의 부모-->
+                    <span>span01</span>
+                </li>
+                <li class="second">li (direct parent)<!--span의 부모-->
+                    <span>span02</span>
+                </li>
+            </ul>
+        </div>
+        <div style="width: 500px;"> div (great-grandparent)
+            <p>p (direct parent)<!--span의 부모-->
+                <span>span</span>
+            </p>
+        </div>
+    </div>
+<!--
+    <div>
+        <p>
+            <span>This is a span element. My ancestors are: </span>
+        </p>
+    </div>-->
+    <button>Add classes to elements</button>
+</body>
+</html>

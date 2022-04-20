@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function(){
+            /*$("h1, h2").click(function(event){
+                $("p").text(event.currentTarget.innerHTML);
+            });
+            $("p").each(function(i){
+                $(this).on("click", {x:i}, function(event){
+                    alert("The "+ $(this).index() + ". paragraph has data: "+ event.data.x);
+                });
+            });
+            $(document).mousemove(function(event){
+                $("span").text("X: "+ event.pageX + ", Y: " + event.pageY);
+            }); 
+            $("p, button, h1").click(function(event){
+                $("div").html("Triggered by a "+event.target.nodeName+ " element.");
+            });
+            $("button").click(function(event){
+                $("span").text("milliseconds after January 1, 1970. : "+event.timeStamp);
+            });*/
+            $("button").on("click dbclick mouseover mouseout", function(event){
+                $("span").text("Event: "+ event.type);
+            });
+        });
+    </script>
+</head>
+<body><!--
+    <h1> Heading 1</h1>
+    <h2> Heading 2</h2>
+    <p></p><br>
+
+    <h2>event.data</h2>
+    <p>This is a paragraph</p>
+    <p>This is another paragraph</p>
+    <p>This is another paragraph</p><br>
+
+    <p>The mouse pointer position is at: <span></span></p><br>
+
+    <h1>This is a heading</h1>
+    <p>This is a paragraph</p>
+    <button>This is a button</button>
+    <div style="color:blue;"></div><br>
+
+    <p><span style="color:red">unknown</span></p>
+    <button>Click me</button><br>-->
+
+    <p>The result of event.type : <span style="color:orange"></span></p>
+    <button> Test of event.type </button>
+</body>
+</html>

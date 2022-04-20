@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>offset()메서드</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script>
+        //콘텐츠 위치 속성 설정 및 반환 메서드
+        $(document).ready(function(){
+            /*$("button").click(function(){
+                let x = $("p").offset();
+                $("#demo").text("Top: "+x.top+" Left: "+x.left);
+            });
+            $("button").click(function(){
+                $("p").offset({top:100,left:50});
+            });
+            $("button").click(function(){
+                $("p").offset(function(n,c){
+                    newPos = new Object();
+                    newPos.left = c.left +20;
+                    newPos.top = c.top +20;
+                    return newPos;
+                });
+            });
+            $("button").click(function(){
+                newPos = new Object();
+                newPos.left ="100";
+                newPos.top = "100";
+                $("p").offset(newPos);
+            });*/
+            $("button").click(function(){
+                $("p").offset($("span").offset());
+            });
+        });
+    </script>
+</head>
+<body>
+    <!--<p>This is a paragraph.</p>
+    <button>Return the offset coordinates of the p element</button>
+    <p id="demo"></p>
+    <button>Set the offwet coordinates</button>
+    <button>Use function</button>
+    <button>Using an object</button>-->
+
+    <p>This is a paragraph.</p>
+    <button>reset the offset coordinates</button>
+    <span style="position: absolute;left: 100px;top: 100px;">This is a span</span>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function(){
+            $("#enabled").click(function(){
+                $(":enabled").css("background-color","red")
+            });
+            $("#disabled").click(function(){
+                $(":disabled").css("background-color","green")
+            });
+            $(":selected").css("background-color","red");
+            $(":checked").wrap("<span style='background-color:red'>");
+        });
+    </script>
+</head>
+<body>
+    <form action="">
+        Name: <input type="text" name="user"><br>
+        ID: <input type="text" name="id" disabled="disabled">
+        Age:<select disabled="disabled">
+                <option>20세-30세</option>
+                <option>30세-50세</option>
+                <option>50세 이상</option>
+            </select><br>
+        Car:<select>
+                <option>Volvo</option>
+                <option selected="selected">Saab</option>
+                <option>Mercedes</option>
+                <option>Audi</option>
+            </select>
+        bike: <input type="checkbox" name="vehicle" value="Bike"><br>
+        car: <input type="checkbox" name="vehicle" value="Car" checked="checked"><br>
+        airplane: <input type="checkbox" name="vehicle" value="Airplane"><br>
+    </form>
+    <button id="enabled">enabled Test</button>
+    <button id="disabled">disabled Test</button>
+</body>
+</html>

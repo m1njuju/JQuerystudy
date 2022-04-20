@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function(){
+            //$("#header").click(function(){
+                //$(":header").css("background-color","yellow")
+            //});
+            $("#header").click(function(){
+                $("p:contains(is)").css("background-color","red")
+            });
+
+            //animated 선택자
+            function aniDiv() {
+                $("div:eq(0)").animate({width:"50%"}, "slow");
+                $("div:eq(0)").animate({width:"100%"}, "slow", aniDiv);
+            }
+            aniDiv();
+            $(".btn1").click(function(){
+                $(":animated").css("background-color","red");
+            });
+        });
+    </script>
+</head>
+<body>
+    <h2>Have a Good_time...</h2>
+    <h4>It's very Good...</h4>
+    <h6>Have a Good_time...</h6>
+    <p class="intro">My name is Donald.</p>
+    <p>I live in Duckburg.</p>
+    <p>My best friend is Mickey.</p>
+    <p>Who is your favourite:</p>
+    <ul id="choose">
+        <li>Kia</li>
+        <li>BMW</li>
+    </ul>
+    <button id="header">header</button><br>
+
+    <button class="btn1">Change color of the animated element</button>
+    <div style="background: blue;">Div 1</div>
+    <div style="background: green;">Div 2</div>
+</body>
+</html>

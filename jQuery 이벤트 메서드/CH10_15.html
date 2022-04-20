@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>바인딩 이벤트 메서드</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <style>
+        .intro {
+            font-size: 150%;
+            color: red;
+        }
+    </style>
+    <script>
+        function handlerName(event){
+                $("#demo").text(event.data.msg);
+            }
+        
+        function changeFontColor() {
+            $(this).css("color","green");
+        }
+        function changeBackgroundColor() {
+            $(this).css("background-color","orange");
+        }
+
+        $(document).ready(function() {
+            /*$("body").on("click", "p", changeFontColor);
+            $("body").on("click", "p", changeBackgroundColor);
+            $("button").click(function(){
+                $("body").off("click",changeFontColor);
+            });
+
+            $("p").on("mouseover mouseout", function() {
+                $(this).toggleClass("intro");
+            });
+            $("p").on({
+                mouseenter : function() {
+                    $(this).css("background-color","lightgray");
+                },
+                mouseleave : function() {
+                    $(this).css("background-color","lightblue");
+                },
+                click : function() {
+                    $(this).css("background-color","yellow");
+                }
+            });
+            $("p").on("myOwnEvent",function(event, showName){
+                $(this).text(showName + "! What a beautiful name!").show();
+            });
+            $("button").click(function(){
+                $("p").trigger("myOwnEvent",["Park.S.B"]);
+            });
+            $("p").on("click", {msg: "You just clicked me!"}, handlerName)
+            $("p").on("click",function(){
+                $(this).css("background-color","pink");
+            });
+            $("button").click(function(){
+                $("p").off("click");
+            });*/
+            $("p").one("click dbclick", function() {
+                $(this).animate({fontSize: "+=6px"});
+            });
+            $("input").select(function(){
+                $("input").after("Text marked!");
+            });
+            $("button").click(function(){
+                $("input").triggerHandler("select");
+            });
+        });
+    </script>
+</head>
+<body>
+    <p>Move the mouse pointer over this paragraph.</p><br>
+
+    <p>Click or move the mouse pointer over this paragraph.</p><br>
+
+    <button>Triger custom event</button>
+    <p>Click the button to attach a customized event on this p element.</p><br>
+    
+    <p>Click me!</p>
+    <p id="demo"></p><br>
+
+    <p>Click this paragraph to change its background color.</p>
+    <button>Remove the click event handler</button><br>
+
+    <p>This is a paragraph.</p>
+    <p>This is another paragraph.</p>
+    <p>Click any p element to increase size and letterspacing.</p>
+    <button>Remove all click event handlers</button><br>
+
+    <p>This is a paragraph.</p>
+    <p>This is another paragraph.</p><br>
+
+    <input type="text" value="Hello World"><br><br>
+    <button>Trigger test</button>
+</body>
+</html>

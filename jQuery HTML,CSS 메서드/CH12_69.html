@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>offsetParent() 메서드</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <style>
+        .grandparent {
+            display: block; border: 2px solid orange;
+            width: 70%; position: absolute; left: 10px; top: 50px;
+        }
+        .parent {
+            border: 1px solid black; margin: 10px; background-color: yellow;
+        }
+    </style>
+    <script>
+        $(document).ready(function(){
+            $("button").click(function(){
+                //offsetParent() 메서드는 첫 번째로 위치한 부모 요소를 반환
+                $("p").offsetParent().css("background-color","red");
+            });
+        });
+    </script>
+</head>
+<body>
+    <button>Set background-color</button>
+    <div class="grandparent">div (grandparent)
+        <div class="parent">div (parent)
+            <p> offsetParent method... </p>
+        </div>
+    </div>
+</body>
+</html>

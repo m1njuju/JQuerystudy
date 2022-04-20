@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>요소/콘텐츠 삽입 메서드</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function(){
+            $("#btn1").click(function(){
+                //append()는 선택한 HTML요소의 끝 부분에 내용 삽입
+                $("p").append(" <b>Appended text</b>.");
+            });
+            $("#btn2").click(function(){
+                $("ol").append(" <li>Appended item</li>");
+            });
+            $("#btn3").click(function(){
+                //prepend()는 선택한 HTML요소의 앞 부분에 내용 삽입
+                $("p").prepend(" <b>Prepended text</b>. ");
+            });
+            $("#btn4").click(function(){
+                $("ol").prepend(" <li>Prepended item</li>");
+            });
+
+            $("#btn5").click(function(){
+                $("h1").appendTo("p");
+            });
+            $("#btn6").click(function(){
+                $("h1").prependTo("p");
+            });
+
+            $("#btn7").click(function(){
+                $("img").before("<b>Before</b>");
+            });
+            $("#btn8").click(function(){
+                $("img").after("<i>After</i>");
+            });
+
+            /*$("#btn9").click(function(){
+                $("p:first").addClass("intro note");
+            });
+            $("#btn9").click(function(){
+                $("p").addClass(function(n){
+                    return "par_"+ n;
+                });
+            });
+            $("#btn9").click(function(){
+                $("p:last").removeClass("intro").addClass("main");
+            });
+
+            $("button").click(function(){
+                $("h1, h2, p").addClass("blue");
+                $("div").addClass("important");
+            });*/
+
+            $("button").click(function(){
+                //clone() 선택된 요소의 복사본을 만듦
+                //clone(true) : 이벤트 핸들러도 복사하도록 지정
+                //clone(false) : 기본값, 이벤트 처리기를 복사하지 않도록 지정
+                $("body").append($("p:first").clone(true));
+            });
+        });
+
+        function appendText() {
+            let txt1 = "<b>I </b>";
+            let txt2 = $("<i></i>").text("love ");
+            let txt3 = document.createElement("b");
+            txt3.innerHTML = "jQuery!";
+            $("body").append(txt1,txt2,txt3);
+        }
+    </script>
+    <style>
+        .important {
+            font-weight: bold;
+            font-size: xx-large;
+        }
+        .blue {
+            color: blue;
+        }
+
+        .intro {
+            font-size: 30px;
+            color: red;
+        }
+        .main {
+            background-color: yellow;
+        }
+        .note {
+            background-color: yellow;
+        }
+
+        .par_0 {
+            color: blue;
+        }
+        .par_1 {
+            color: red;
+        }
+    </style>
+</head>
+<body><!--
+    <p>This is a paragraph.</p>
+    <p>This is another paragraph.</p>
+    <ol>
+        <li>List item 1</li>
+        <li>List item 2</li>
+        <li>List item 3</li>
+    </ol>
+    <button id="btn1">Append text</button>
+    <button id="btn2">Append list items</button>
+    <button id="btn3">Prepend text</button>
+    <button id="btn4">Prepend list item</button><br>
+
+    <p>Click the button to insert text after the image.</p>
+    <button onclick="appendText()">Insert after</button><br><br>
+
+    <button id="btn5">Insert after element</button>
+    <button id="btn6">Insert before element</button>
+    <h1>This is a heading</h1>
+    <p>This is a paragraph.</p>
+    <p class="intro">This is another paragraph.</p>
+    <button id="btn9">Add two class names to the first p element</button><br><br>
+
+    <img src="yacht.jpg" alt="jQuery" width="300" height="140"><br><br>
+    <button id="btn7">Insert before</button>
+    <button id="btn8">Insert after</button><br><br>
+
+    <h1>Heading 1</h1>
+    <h2>Heading 2</h2>
+    <p>This is a paragraph.</p>
+    <p>This is another paragraph.</p>
+    <div>This is some important text!</div><br>
+    <button>Add classes to elements</button><br><br>-->
+
+    <p>Click this paragraph to increase text size.</p>
+    <p>This is another paragraph.</p>
+    <button>Copy the first p element</button>
+</body>
+</html>

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>요소/콘텐츠 삭제 메서드</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function(){
+            /*let x;
+            $("#btn1").click(function(){
+                x = $("p").detach();//선택한 요소를 제거(데이터 및 이벤트 유지)
+            });
+            $("#btn2").click(function(){
+                $("body").prepend(x);
+            });
+            $("#btn1").click(function(){
+                $("p").remove();//제거 후 복원이 불가능
+            });
+
+            $("#btn1").click(function(){
+                $("p").remove(".test, .demo");
+            });
+
+            $("#btn01").click(function(){
+                $("#div1").remove();//div 박스 자체가 사라짐
+            });
+            $("#btn02").click(function(){
+                $("#div1").empty();//선택한 요소의 모든 자식 노드와 내용 제거
+            });
+
+            $("button").click(function(){
+                $("li").removeClass(function(n){
+                    if(n==0||n==1){ return "listitem" }
+                    else {return ""}
+                });
+            });
+
+            $("button").click(function(){
+                $("p, h1").removeClass("head intro main");
+            });
+
+            $("button").click(function(){
+                $("p").removeAttr("style");
+            });
+
+            $("button").click(function(){
+                $("p").removeAttr("id class");
+            });
+
+            //클래스 이름추가 및 제거 토글
+            $("button").click(function(){
+                $("p").toggleClass("main");
+            });*/
+
+            //함수를 사용하여 클래스 토글
+            $("button").click(function(){
+                $("li").toggleClass(function(n){
+                    return "listitem_" +n;
+                });
+            });
+
+            //switch 매개변수 사용
+            $("#add").click(function(){
+                $("p").toggleClass("main",true);//클래스 추가
+            });
+            $("#remove").click(function(){
+                $("p").toggleClass("main",false);//클래스 제거
+            });
+        });
+    </script>
+    <style>
+        .listitem_1, .listitem_3 { color: red; }
+        .listitem_0, .listitem_2 { color: blue; }
+
+        .head {
+            font-size: 2em;
+            color: green;
+        }
+        .intro {
+            font-size: 120%;
+            color: red;
+        }
+        .main {
+            font-size: 120%;
+            color: red;
+        }
+
+        #p1 {
+            color: white;
+            background-color: green;
+            font-size: 20px;
+            padding: 5px;
+        }
+        .blue {
+            color: white;
+            background-color: blue;
+            font-size: 20px;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <p>This is a paragraph.</p>
+    <p class="test">This is p element with class="test"</p>
+    <p class="test">This is p element with class="test"</p>
+    <p class="demo">This is p element with class="demo"</p>
+    <button id="btn1">Remove p element</button>
+    <button id="btn2">Restore p element</button><br><br><br>
+
+    <div id="div1" style="height: 100px; width: 300px; border: 1px solid black;
+            background-color: yellow;">
+        This is some test in the div.
+        <p>This is a paragraph in the div</p>
+        <p>This is another paragraph in the div</p>
+    </div><br>
+    <button id="btn01">Remove div element</button>
+    <button id="btn02">Empty div element</button><br><br>
+<!--
+    <h1>This is a heading</h1>
+    <ul>
+        <li class="listitem">Peter</li>
+        <li class="listitem">Lois</li>
+        <li class="listitem">Chris</li>
+        <li class="listitem">Stewie</li>
+    </ul>
+    <button>Remove class</button><br><br>-->
+
+    <h1 class="head">This is a heading</h1>
+    <p class="intro">This is a paragraph.</p>
+    <p class="main">This is another paragraph.</p>
+    <button>Remove many elements</button><br><br>
+
+    <h1>This is a heading</h1>
+    <p style="font-size: 120%;color: red;">This is a paragraph.</p>
+    <p style="font-weight: bold;color: blue;">This is another paragraph.</p>
+    <button>Remove the style attribute</button><br><br>
+
+    <h1>This is a heading</h1>
+    <p id="p1">This is a paragraph.</p>
+    <p class="blue">This is another paragraph.</p>
+    <button>Remove id and class attribute</button><br><br>
+
+    <p>This is a paragraph.</p>
+    <p class="main">This is another paragraph.</p>
+    <button>Toggle class</button><br><br>
+
+    <h1>This is a heading</h1>
+    <ul>
+        <li>Peter</li>
+        <li>Lois</li>
+        <li>Chris</li>
+        <li>Stewie</li>
+    </ul>
+    <button>Add/remove classes</button><br><br>
+
+    <p>This is a paragraph.</p>
+    <p class="main">This is another paragraph.</p>
+    <button id="add">Add class "main"</button>
+    <button id="remove">Remove class "main"</button><br><br>
+</body>
+</html>

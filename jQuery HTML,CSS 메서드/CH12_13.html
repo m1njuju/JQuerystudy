@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function(){
+            /*$("button").click(function(){
+                let x= $("p").position();//position()메서드는 부모 요소 기준으로 요소의 위치 반환
+                $("#demo").text("Top position: "+x.top+" Left position: "+x.left);
+            });
+            $("button").click(function(){
+                //offsetParent()는 첫번째로 가장 가까운 위치에 있는 부모를 선택
+                //선택의 기준은 position(relative or absolute)을 가지고 있는 부모를 말한다. 
+                $("p").offsetParent().css("background-color","red");
+            });*/
+            $(window).scroll(function(){
+                if($(document).scrollTop() > 50) {
+                    $("p").addClass("test");
+                }
+                else {
+                    $("p").removeClass("test");
+                }
+            });
+        });
+    </script>
+    <style>
+        .test {
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body style="height: 500px;">
+    <!--<p>This is a paragraph</p>
+    <button>position of P tag</button>
+    <p id="demo"></p><br>
+
+    <button>Set background-color</button>
+    <div style="border: 1px solid black;width: 70%;position: absolute; left: 10px;top: 50px;">
+        <div style="border: 1px solid black;margin: 50px; background-color: yellow; ">
+            <p>Click button to set the background color of the first parent</p>
+        </div>
+    </div>-->
+
+    <p>Scroll down this page.</p>
+    <p style="position: fixed;">
+        When you have scrolled 50 pixels from the top,
+        add the class "test" (yellow background color) to the paragraph.
+        Scroll up again to remove the class.
+    </p>
+</body>
+</html>

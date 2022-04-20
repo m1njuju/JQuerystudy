@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery 선택자</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function(){
+            $("button").click(function(){
+                $(".test").hide();
+            });
+        });
+
+        //그룹 선택자
+        $(document).ready(function(){
+            $("button").click(function(){
+                $("h2, div, span").css("background-color","yellow");
+            });
+        });
+    </script>
+</head>
+<body>
+    <!--
+    <h2 class="test">This is a heading</h2>
+    <p class="test">This is a paragraph.</p>
+    <p>This is another paragraph.</p>
+    <button>Click me</button>
+    -->
+    <h1>Welcome to My Web Page</h1>
+    <h2>Nice to meet you</h2>
+    <div>Very nice indeed.</div>
+    <p>How are you?</p>
+    <p>I'm fine, <span>thanks.</span></p>
+    <button>Click me</button>
+
+    <script>
+        $(document).ready(function(){
+            $("button").click(function(){
+                $(".test, #demo").hide();
+            });
+        });
+    </script>
+    <h2 class="test">This is a heading</h2>
+    <p id="demo">This is a paragraph.</p>
+    <p>This is another paragraph.</p>
+    <button>Click me</button>
+</body>
+</html>

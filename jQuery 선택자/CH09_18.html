@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>nth 관련 선택자</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function(){
+            $("#nth-child").click(function(){
+                $("p:nth-child(3)").css("background-color","yellow");
+            });
+            $("#nth-of-type").click(function(){
+                $("p:nth-of-type(3)").css("background-color","yellow");
+            });
+            $("#nth-last-child").click(function(){
+                $("p:nth-last-child(3)").css("background-color","yellow");
+            });
+            $("#nth-last-of-type").click(function(){
+                $("p:nth-last-of-type(3)").css("background-color","yellow");
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1>body에 있는 heading</h1>
+    <p>body의 첫 번째 단락</p>
+    <p>body의 두 번째 단락</p>
+    <div style="border:1px solid">
+        <span>div의 span 요소</span>
+        <p>div의 첫 번째 단락</p>
+        <p>div의 두 번째 단락</p>
+        <p>div의 마지막(세 번재)첫 번째 단락</p>
+    </div><br>
+    <div style="border:1px solid">
+        <p>다른 div의 첫 번째 단락</p>
+        <p>다른 div의 두 번째 단락</p>
+        <p>다른 div의 세 번째 단락</p>
+    </div>
+    <p>body의 세 번째(마지막)단락</p>
+    <button id="nth-child">nth-child</button>
+    <button id="nth-of-type">nth-of-type</button>
+    <button id="nth-last-child">nth-last-child</button>
+    <button id="nth-last-of-type">nth-last-of-type</button>
+</body>
+</html>

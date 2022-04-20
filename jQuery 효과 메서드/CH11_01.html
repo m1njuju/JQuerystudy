@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function() {
+            $("button").click(function() {
+                //$("#hydrangeas").animate({width:400, height:300, left:'100px', opacity: '0.5'});
+                //$("#hydrangeas").animate({width:'+=10px', height:'+=10px',
+                                            //left:'+=10px', opacity: '-=0.1'});
+                //$("#hydrangeas").animate({width:'toggle'});
+                let div = $("#hydrangeas");
+                div.animate({height: '300px', opacity: '0.4'}, "slow");
+                div.animate({width: '400px', opacity: '0.8'}, "slow");
+                div.animate({width: '100px', opacity: '0.4'}, "slow");
+                div.animate({height: '100px', opacity: '0.8'}, "slow");
+            });
+        });
+    </script>
+</head>
+<body>
+    <button>Start Animation</button><br><br>
+    <img id="hydrangeas" src="./img/hydrangeas.jpg" alt="hydrangeas"
+            width="300" height="200" style="position: absolute;">
+            <!--
+                일반적으로 모든 HTML요소는 고정도니 위치에 있으며 이동할 수 없다
+                위치를 조작하려면 요소의 CSS position 속성은을 relative, fixed, absolute로
+                설정해야 한다
+            -->
+</body>
+</html>

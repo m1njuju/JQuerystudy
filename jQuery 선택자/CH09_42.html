@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function(){
+            $("input").focus();
+            $(":focus").css("background-color","red");
+            $("#has").click(function(){
+                $("div:has(p, span, li)").css("border","solid red");
+            });
+            $("#empty").click(function(){
+                $(":empty").css("background-color","blue");
+            });
+            $("#hidden").click(function(){
+                $("p:hidden").show(3500);
+            });
+            $("#visible").click(function(){
+                $("p:visible").css("background-color","yellow");
+            });
+            $("#lang").click(function(){
+                $("p:lang(it)").css("background-color","red");
+            });
+            $("#root").click(function(){
+                $(":root").css("background-color","yellow");
+            });
+        });
+    </script>
+</head>
+<body>
+    <h2> Select Focus...</h2>
+    <input type="text"><br>
+
+    <div>
+        <p>This is a paragraph inside a div element.<br>
+        <span>This is a span element</span>
+        </p>
+        <li>This is a list item inside a div element</li>
+    </div>
+    <br>
+    <div>
+        <li>This is a list item inside a div element</li>
+    </div>
+    <br>
+    <button id="has">has</button><br>
+
+    <h1>Welcome to My Web Page</h1>
+    <table border="1">
+        <tr>
+            <th>대한민국</th>
+            <th></th>
+            <th>서울</th>
+        </tr>
+        <tr>
+            <td>프랑스</td>
+            <td>마크롱</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>독일</td>
+            <td></td>
+            <td>베를린</td>
+        </tr>
+    </table>
+    <button id="empty">empty</button><br>
+
+    <h2>This is a heading</h2>
+    <p>This is a paragraph.</p>
+    <p>This is another paragraph.</p>
+    <p style="display: none;">This is a hidden paragraph.</p>
+    <button id="hidden">hidden</button>
+    <button id="visible">visible</button><br>
+
+    <p>I live in Italy.</p>
+    <p lang="it">Ciao bella!</p>
+    <button id="lang">lang</button>
+    <button id="root">root</button>
+</body>
+</html>

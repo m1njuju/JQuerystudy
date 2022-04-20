@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>노드 선택자</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <style>
+        .test * {
+            display: block;
+            border: 2px solid orange;
+            color: blue;
+            padding: 5px;
+            margin: 15px;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        $(document).ready(function(){
+            $("button").click(function(){
+                $("a~p").css({"color" : "green", "border":"2px solid green"});
+            });
+        });
+    </script>
+    <div class="test">
+        <a href="#"> a1 Tag </a>
+        <p>p (child)
+            <span>span 1</span>
+            <a href="#"> a2 Tag</a>
+        </p>
+        <p>p (child)
+            <span>span 2</span>
+        </p>
+    </div>
+    <button>Click me</button>
+</body>
+</html>
